@@ -23,7 +23,7 @@ const greeting = {
   username: "Giancarlo Marte",
   title: "Hi all, I'm Giancarlo",
   subTitle: emoji(
-    "I am a seasoned developer with over 20 years of experience in the industry. Throughout my career, I have gained expertise in a variety of programming languages, including ⚡SAPUI5, Python, C#, PHP, ABAP, and Javascript⚡."
+    "your dedicated SAP integration specialist. My goal is to ensure robust business continuity for your organization. Let's partner up and drive your next project to success."
   ),
   resumeLink: "", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -56,7 +56,7 @@ const skillsSection = {
       "🌌 Responsible for the design, development, and maintenance of SAP systems and applications"
     ),
     emoji(
-      "💥 Proficient in automating tasks and integrating applications with REST API(JSON, Python, C#)."
+      "💥 Proficient in automating tasks and integrating applications using REST API, with expertise in JSON, Python, and C#."
     ),
     emoji(
       "⚡ Working with various SAP modules and technologies, such as SAP ABAP, HANA, UI5/Fiori, NetWeaver, and integration technologies like PI/PO, CPI, HCI"
@@ -141,7 +141,7 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: false, //Set it to true to show Proficiency Section
   experience: [
     {
       Stack: "SAP", //Insert stack or technology you have experience in
