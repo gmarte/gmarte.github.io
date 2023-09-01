@@ -40,6 +40,7 @@ npm install
 
 # Start a local dev server
 npm start
+npm run deploy
 ```
 
 ## Linking Portfolio to GitHub
