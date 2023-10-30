@@ -206,34 +206,75 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Key Projects",
+  subtitle: "Leading and Developing Technological Innovations for Established Companies",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/argentoba.png"),
+      projectName: "ArgentoBA",
+      projectDesc: "The website serves as a real estate platform showcasing properties available for sale or rent, particularly in the Dominican Republic.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://saayahealth.com/"
+          url: "http://argentoba.com/"
+        },
+        {
+          name: "HTML5 - javascript - wordpress",          
         }
         //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/FTM_Mascot.png"),
+      projectName: "Family Task Manager",
+      projectDesc: "Web platform that allows parents to assign chores and responsibilities to their children and reward them for completion.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://nextu.se/"
+          url: "https://ftm-v2-me-gmartecom.vercel.app/"
+        },
+        {
+          name: "NextJS - React - Appwrite - Zustand",          
+          url: "https://github.com/gmarte/FTMv2"
+        }
+        //  you can add extra buttons here.
+      ]
+    },
+    //https://ftm-v2-me-gmartecom.vercel.app/
+    {
+      image: require("./assets/images/promises.png"),
+      projectName: "Promises",
+      projectDesc: "This web application is to provide a transparent and accountable system for tracking and reporting on the promises made by politicians to the public.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.youtube.com/watch?v=nGN2Qfxkr5k"
+        },
+        {
+          name: "Github",
+          url: "https://github.com/gmarte/promesas/"
+        },
+        {
+          name: "Bootstrap - REST - Django",          
+        },
+      ]
+    },
+    {
+      image: require("./assets/images/CCVA-GIF.gif"),
+      projectName: "Assisted Sales",
+      projectDesc: "The Assisted Sales project is a React Native application developed with the Expo framework, designed to interface with an SAP ERP 6.0 backend. The setup implies a robust enterprise mobile application capable of leveraging the vast functionalities and data offered by the SAP system, ensuring a cohesive experience for its users.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://youtu.be/zYN5LaIKr6o"
+        },
+        {
+          name: "React Native - EXPO - SAP ECC 6.0",          
         }
       ]
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
