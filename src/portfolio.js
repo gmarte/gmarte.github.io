@@ -210,6 +210,21 @@ const bigProjects = {
   subtitle: "Leading and Developing Technological Innovations for Established Companies",
   projects: [
     {
+      image: require("./assets/images/bonosccn.png"),
+      projectName: "BONOS CCN",
+      projectDesc: "A dynamic e-commerce platform built using React. The site integrates AZUL PSP for secure payment processing, seamlessly connected with SAP ECC SD to manage sales and invoicing",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://bonosccn.do/"
+        },
+        {
+          name: "React - SAP ECC - E-COMMERCE",          
+        }
+        //  you can add extra buttons here.
+      ]
+    },
+    {
       image: require("./assets/images/argentoba.png"),
       projectName: "ArgentoBA",
       projectDesc: "The website serves as a real estate platform showcasing properties available for sale or rent, particularly in the Dominican Republic.",
@@ -225,13 +240,29 @@ const bigProjects = {
       ]
     },
     {
+      image: require("./assets/images/dajerco2.jpg"),
+      projectName: "Dajer & CO",
+      projectDesc: "Dajer & Co Studio specializes in outsourcing solutions for the AEC industry, focusing on high-quality drafting services.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.dajerstudio.com/"
+        },
+        {
+          name: "HTML5 - javascript - wordpress",          
+          url: "https://www.dajerstudio.com/"
+        }
+        //  you can add extra buttons here.
+      ]
+    },
+    {
       image: require("./assets/images/FTM_Mascot.png"),
       projectName: "Family Task Manager",
       projectDesc: "Web platform that allows parents to assign chores and responsibilities to their children and reward them for completion.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://ftm-v2-me-gmartecom.vercel.app/"
+          url: "https://ftm-v2.vercel.app/"
         },
         {
           name: "NextJS - React - Appwrite - Zustand",          
@@ -262,7 +293,7 @@ const bigProjects = {
     {
       image: require("./assets/images/CCVA-GIF.gif"),
       projectName: "Assisted Sales",
-      projectDesc: "The Assisted Sales project is a React Native application developed with the Expo framework, designed to interface with an SAP ERP 6.0 backend. The setup implies a robust enterprise mobile application capable of leveraging the vast functionalities and data offered by the SAP system, ensuring a cohesive experience for its users.",
+      projectDesc: "The Assisted Sales project is a React Native application developed with the Expo framework, designed to interface with an SAP ECC backend.",
       footerLink: [
         {
           name: "Visit Website",
