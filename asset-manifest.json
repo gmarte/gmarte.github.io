@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2a1b5351.css",
-    "main.js": "/static/js/main.7b1650e2.js",
+    "main.js": "/static/js/main.7db41dda.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
     "static/js/64.41912c0a.chunk.js": "/static/js/64.41912c0a.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
@@ -14,15 +14,17 @@
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
     "static/media/manOnTable.svg": "/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
+    "static/media/bonosccn.png": "/static/media/bonosccn.2bfbbd45caf84d994749.png",
     "static/media/contactMailDark.svg": "/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
     "static/media/sapLogo.png": "/static/media/sapLogo.12ad7921ac09e87c628f.png",
     "static/media/developerActivity.svg": "/static/media/developerActivity.2c0445cae86f4243433a2f5a22b2c031.svg",
+    "static/media/dajerco2.jpg": "/static/media/dajerco2.0f978a8878a9cf940578.jpg",
     "static/media/logoPUCMM.png": "/static/media/logoPUCMM.0b6844eb1cd547fd4dc6.png",
     "static/media/skill.svg": "/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.2a1b5351.css.map": "/static/css/main.2a1b5351.css.map",
-    "main.7b1650e2.js.map": "/static/js/main.7b1650e2.js.map",
+    "main.7db41dda.js.map": "/static/js/main.7db41dda.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
     "64.41912c0a.chunk.js.map": "/static/js/64.41912c0a.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
@@ -30,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.2a1b5351.css",
-    "static/js/main.7b1650e2.js"
+    "static/js/main.7db41dda.js"
   ]
 }
