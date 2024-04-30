@@ -33,7 +33,7 @@ export default function Contact() {
                 <>
                   <a
                     className="contact-detail"
-                    href={"tel:" + contactInfo.number}
+                    href={"https://t.me/" + contactInfo.number}
                   >
                     {contactInfo.number}
                   </a>
