@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -31,6 +32,25 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} dark antialiased h-full`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        
+        {/* Optimized Google Analytics Scripts */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-T2EFX6WNEZ`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-T2EFX6WNEZ');
+            `,
+          }}
+        />
+
         <Navigation />
         <main className="flex-grow flex flex-col">
           {children}
