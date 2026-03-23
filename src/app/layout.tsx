@@ -19,6 +19,14 @@ export const metadata: Metadata = {
   title: "Giancarlo Marte | Technology & Innovation Leader",
   description: "Technology leader with 10+ years of experience in enterprise systems, SAP, integrations, digital transformation, and AI-driven innovation.",
   keywords: ["Technology and Innovation Manager", "SAP Solutions Architect", "Enterprise Systems Leader", "CargoWise", "Logistics Technology", "Digital Transformation"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: { url: "/apple-icon.png", type: "image/png" },
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
