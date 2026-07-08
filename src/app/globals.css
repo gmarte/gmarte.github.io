@@ -1,57 +1,163 @@
 @import "tailwindcss";
 
+/*
+  gmarte.com — "Control Room Editorial"
+  Obsidian base, porcelain text, one disciplined signal red.
+*/
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  /* Surfaces */
+  --color-ink: #060607;
+  --color-ink-raised: #0b0b0d;
+  --color-ink-panel: #121216;
 
-  /* Graphite / Black / Steel palette */
-  --color-graphite-950: #050505;
-  --color-graphite-900: #0a0a0a;
-  --color-graphite-800: #141414;
-  --color-graphite-700: #222222;
-  --color-steel-400: #8c92a1;
-  --color-steel-300: #a0a6b5;
+  /* Text */
+  --color-porcelain: #f4f3f0;
+  --color-steel: #a6a9b0;
+  --color-mist: #6b6e76;
 
-  /* Accent: Deep Red */
-  --color-brand-red: #a40000;
-  --color-brand-red-light: #cc0000;
-  --color-brand-red-dark: #7a0000;
-  --color-brand-red-glow: rgba(164, 0, 0, 0.4);
+  /* Signal — the only color on the site */
+  --color-signal: #c22233;
+  --color-signal-deep: #7e1220;
+  --color-signal-soft: #e4636b;
 
-  --font-sans: var(--font-inter), sans-serif;
-  --font-heading: var(--font-outfit), sans-serif;
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --animate-ticker: ticker 46s linear infinite;
+  @keyframes ticker {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(194, 34, 51, 0.45);
+    }
+    50% {
+      opacity: 0.65;
+      box-shadow: 0 0 0 6px rgba(194, 34, 51, 0);
+    }
+  }
 }
 
 :root {
-  /* Enforce Dark Theme Globally */
-  --background: #050505;
-  --foreground: #ffffff;
-  --muted: #141414;
-  --muted-foreground: #a0a6b5;
+  color-scheme: dark;
 }
 
 html {
-  scroll-behavior: smooth;
+  background-color: var(--color-ink);
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-ink);
+  color: var(--color-porcelain);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
-@utility glass {
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+::selection {
+  background: var(--color-signal);
+  color: var(--color-porcelain);
+}
+
+/* Quiet scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #26262b transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #26262b;
+  border-radius: 8px;
+  border: 3px solid var(--color-ink);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-signal-soft);
+  outline-offset: 3px;
+}
+
+/* Hairline — the structural line of the whole system */
+@utility hairline {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Raised panel surface */
+@utility panel {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.028),
+    rgba(255, 255, 255, 0.008)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Mono kicker label */
+@utility kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-mist);
 }
 
 @utility text-balance {
   text-wrap: balance;
+}
+
+/* Film grain overlay (applied on a fixed element) */
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* Serif display defaults */
+.font-serif {
+  letter-spacing: -0.01em;
+}
+
+/* Lenis recommendations */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

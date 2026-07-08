@@ -1,36 +1,48 @@
-import { CheckCircle2 } from "lucide-react";
+"use client";
+
+import { PROOF } from "@/lib/content";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { Stagger, StaggerItem } from "@/components/ui/Motion";
 
 export default function Achievements() {
-  const achievements = [
-    "Architected and implemented enterprise SAP systems and integration solutions globally.",
-    "Built and deployed integrated, high-availability web portals servicing external customers.",
-    "Led cross-functional ABAP and technical teams across multiple international projects.",
-    "Engineered integration solutions that directly increased sales velocity and operational control.",
-    "Established foundational AI development agents to modernize internal software practices.",
-    "Spearheaded the modernization of development lifecycles and CI/CD platform strategy.",
-    "Orchestrated unshakeable business continuity planning for mission-critical applications.",
-  ];
-
   return (
-    <section className="py-24 md:py-32 bg-graphite-950 border-t border-white/5" id="achievements">
-      <div className="container mx-auto px-6 md:px-12 xl:px-24">
-        
-        <div className="mb-16">
-          <h2 className="text-sm font-semibold tracking-widest text-brand-red uppercase mb-3">Proof Points</h2>
-          <h3 className="text-4xl md:text-5xl font-heading font-semibold text-white tracking-tight">
-            Selected Achievements
-          </h3>
-        </div>
+    <section
+      id="proof"
+      data-chapter="06"
+      className="hairline relative border-t bg-ink py-28 md:py-40"
+    >
+      <div className="mx-auto w-full max-w-[90rem] px-6 md:px-12 xl:px-20">
+        <SectionHeader
+          index="06"
+          label="Proof Points"
+          lines={[
+            "Claims are cheap.",
+            <span key="e" className="italic text-steel">
+              These shipped.
+            </span>,
+          ]}
+          intro={PROOF.intro}
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-6">
-          {achievements.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-4 p-6 glass rounded-xl border border-white/5 hover:border-brand-red/20 transition-colors">
-              <CheckCircle2 className="text-brand-red shrink-0 mt-1" size={20} />
-              <p className="text-steel-300 text-lg leading-relaxed text-balance">{item}</p>
-            </div>
-          ))}
-        </div>
-
+        <Stagger className="mt-20" stagger={0.06}>
+          <div className="hairline border-t">
+            {PROOF.items.map((item, i) => (
+              <StaggerItem key={item.headline}>
+                <div className="hairline group grid grid-cols-[auto_1fr] items-baseline gap-x-6 border-b py-7 md:grid-cols-[6rem_1fr_1.2fr] md:gap-x-10 md:py-8">
+                  <span className="font-mono text-xs tracking-[0.2em] text-mist transition-colors duration-500 group-hover:text-signal-soft">
+                    {String(i + 1).padStart(3, "0")}
+                  </span>
+                  <h3 className="text-lg font-medium tracking-tight text-porcelain md:text-xl">
+                    {item.headline}
+                  </h3>
+                  <p className="col-start-2 mt-2 text-sm leading-relaxed text-mist md:col-start-3 md:mt-0 md:text-base md:text-steel">
+                    {item.detail}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </div>
+        </Stagger>
       </div>
     </section>
   );

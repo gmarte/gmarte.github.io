@@ -1,41 +1,103 @@
-import { Layers, Workflow, Webhook, BrainCircuit, ShieldAlert, TrendingUp } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { IMPACT } from "@/lib/content";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { Reveal, EASE } from "@/components/ui/Motion";
 
 export default function SignatureImpact() {
-  const themes = [
-    { title: "Enterprise Systems", icon: <Layers size={22}/>, desc: "Architecting scalable foundations using SAP and enterprise-grade infrastructure to resolve extreme business complexity." },
-    { title: "Integration Architecture", icon: <Webhook size={22}/>, desc: "Connecting disparate platforms, portals, and modules using robust APIs for seamless operational data flow." },
-    { title: "AI Enablement", icon: <BrainCircuit size={22}/>, desc: "Pioneering the safe, systematic integration of AI agents to accelerate internal development and intelligent automation." },
-    { title: "Operational Resilience", icon: <ShieldAlert size={22}/>, desc: "Designing for maximum uptime, rigid governance, and unshakeable business continuity across mission-critical nodes." },
-    { title: "Technology Governance", icon: <Workflow size={22}/>, desc: "Enforcing mature CI/CD practices, strict development standards, and rigorous IT vendor/budget management." },
-    { title: "Business Execution", icon: <TrendingUp size={22}/>, desc: "Translating executive vision into technological reality, directly driving revenue pipelines and operational efficiency." },
-  ];
+  const [open, setOpen] = useState(0);
 
   return (
-    <section className="py-24 md:py-32 bg-graphite-900 border-t border-white/5" id="impact">
-      <div className="container mx-auto px-6 md:px-12 xl:px-24">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-semibold tracking-widest text-brand-red uppercase mb-3">Signature Themes</h2>
-          <h3 className="text-4xl md:text-5xl font-heading font-semibold text-white tracking-tight mb-6">
-            Strategic Impact Pillars
-          </h3>
-          <p className="text-lg text-steel-400 leading-relaxed text-balance">
-            Prioritizing architectural maturity, sustainable growth, and systemic efficiency over isolated code delivery.
-          </p>
-        </div>
+    <section
+      id="impact"
+      data-chapter="05"
+      className="hairline relative border-t bg-ink-raised py-28 md:py-40"
+    >
+      <div className="mx-auto w-full max-w-[90rem] px-6 md:px-12 xl:px-20">
+        <SectionHeader
+          index="05"
+          label="Signature Impact"
+          lines={[
+            "Seven pillars,",
+            <span key="e" className="italic text-steel">
+              carried from architecture to operation.
+            </span>,
+          ]}
+          intro={IMPACT.intro}
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {themes.map((theme, idx) => (
-            <div key={idx} className="bg-graphite-950/50 p-8 rounded-2xl border border-white/5 hover:border-brand-red/40 hover:bg-graphite-950 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
-              <div className="h-16 w-16 rounded-full bg-graphite-900 border border-white/10 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                {theme.icon}
-              </div>
-              <h4 className="text-xl font-semibold text-white mb-3">{theme.title}</h4>
-              <p className="text-sm text-steel-400 leading-relaxed">{theme.desc}</p>
-            </div>
-          ))}
-        </div>
-
+        <Reveal className="mt-20">
+          <div className="hairline border-t">
+            {IMPACT.pillars.map((pillar, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={pillar.title} className="hairline border-b">
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                    className="group flex w-full items-baseline gap-6 py-7 text-left md:gap-10 md:py-8"
+                  >
+                    <span
+                      className={`font-mono text-xs tracking-[0.2em] transition-colors duration-500 ${
+                        isOpen ? "text-signal-soft" : "text-mist"
+                      }`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`flex-1 font-serif text-2xl leading-tight transition-all duration-500 md:text-4xl ${
+                        isOpen
+                          ? "text-porcelain"
+                          : "text-steel group-hover:translate-x-2 group-hover:text-porcelain"
+                      }`}
+                    >
+                      {pillar.title}
+                    </span>
+                    <span
+                      aria-hidden
+                      className={`relative h-4 w-4 shrink-0 transition-transform duration-500 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                    >
+                      <span className="absolute left-0 top-1/2 h-px w-full bg-steel" />
+                      <span className="absolute left-1/2 top-0 h-full w-px bg-steel" />
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.6, ease: EASE }}
+                        className="overflow-hidden"
+                      >
+                        <div className="flex flex-col gap-6 pb-9 pl-12 pr-4 md:flex-row md:items-end md:justify-between md:pl-[4.5rem]">
+                          <p className="max-w-xl text-base leading-relaxed text-steel">
+                            {pillar.desc}
+                          </p>
+                          <div className="flex flex-wrap gap-2 md:justify-end">
+                            {pillar.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="hairline border px-3 py-1.5 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-mist"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
