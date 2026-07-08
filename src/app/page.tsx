@@ -5,10 +5,13 @@ import CurrentScope from "@/components/sections/CurrentScope";
 import SignatureImpact from "@/components/sections/SignatureImpact";
 import Achievements from "@/components/sections/Achievements";
 import LeadershipPhilosophy from "@/components/sections/LeadershipPhilosophy";
+import FinalCta from "@/components/sections/FinalCta";
+import ScrollLedger from "@/components/ui/ScrollLedger";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
+    <>
+      <ScrollLedger />
       <HeroSection />
       <ExecutivePositioning />
       <CareerTimeline />
@@ -16,6 +19,7 @@ export default function Home() {
       <SignatureImpact />
       <Achievements />
       <LeadershipPhilosophy />
-    </div>
+      <FinalCta />
+    </>
   );
 }

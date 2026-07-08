@@ -1,25 +1,58 @@
-import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Archivo, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import Chrome from "@/components/layout/Chrome";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
 });
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#060607",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gmarte.com"),
   title: "Giancarlo Marte | Technology & Innovation Leader",
-  description: "Giancarlo Marte — Technology leader with 10+ years of experience in enterprise systems, SAP, integrations, digital transformation, and AI-driven innovation.",
-  keywords: ["Giancarlo Marte", "Technology and Innovation Manager", "SAP Solutions Architect", "Enterprise Systems Leader", "CargoWise", "Logistics Technology", "Digital Transformation"],
+  description:
+    "Giancarlo Marte — Technology leader with 10+ years of experience in enterprise systems, SAP, integrations, digital transformation, and AI-driven innovation.",
+  keywords: [
+    "Giancarlo Marte",
+    "Technology and Innovation Manager",
+    "SAP Solutions Architect",
+    "Enterprise Systems Leader",
+    "Digital Transformation Leader",
+    "SAP ECC",
+    "SAP EWM",
+    "CargoWise",
+    "Logistics Technology",
+    "Supply Chain Technology",
+    "AI Enablement",
+    "Enterprise Integrations",
+  ],
   authors: [{ name: "Giancarlo Marte", url: "https://gmarte.com" }],
   creator: "Giancarlo Marte",
   alternates: {
@@ -32,13 +65,14 @@ export const metadata: Metadata = {
     type: "profile",
     url: "https://gmarte.com",
     title: "Giancarlo Marte | Technology & Innovation Leader",
-    description: "Giancarlo Marte — Technology leader with 10+ years of experience in enterprise systems, SAP integrations, and AI-driven innovation.",
+    description:
+      "Technology leader with 10+ years of experience in enterprise systems, SAP, integrations, digital transformation, and AI-driven innovation.",
     siteName: "Giancarlo Marte",
     images: [
       {
-        url: "/profile.jpg",
-        width: 1200,
-        height: 630,
+        url: "/generated/og-cover.jpg",
+        width: 1376,
+        height: 768,
         alt: "Giancarlo Marte — Technology & Innovation Leader",
       },
     ],
@@ -49,8 +83,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Giancarlo Marte | Technology & Innovation Leader",
-    description: "Giancarlo Marte — Technology leader with 10+ years of experience in enterprise systems, SAP integrations, and AI-driven innovation.",
-    images: ["/profile.jpg"],
+    description:
+      "Technology leader with 10+ years of experience in enterprise systems, SAP, integrations, digital transformation, and AI-driven innovation.",
+    images: ["/generated/og-cover.jpg"],
     creator: "@gmarte621",
   },
   icons: {
@@ -71,10 +106,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} dark antialiased h-full`}
+      className={`${archivo.variable} ${instrumentSerif.variable} ${plexMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
-        
+      <body className="bg-ink text-porcelain font-sans">
         {/* Schema.org Person structured data */}
         <Script
           id="schema-person"
@@ -87,7 +121,8 @@ export default function RootLayout({
               url: "https://gmarte.com",
               image: "https://gmarte.com/profile.jpg",
               jobTitle: "Technology & Innovation Manager",
-              description: "Technology leader with 10+ years of experience in enterprise systems, SAP integrations, digital transformation, and AI-driven innovation.",
+              description:
+                "Technology leader with 10+ years of experience in enterprise systems, SAP integrations, digital transformation, and AI-driven innovation.",
               worksFor: {
                 "@type": "Organization",
                 name: "Caribetrans",
@@ -108,10 +143,10 @@ export default function RootLayout({
           }}
         />
 
-        {/* Optimized Google Analytics Scripts */}
+        {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-T2EFX6WNEZ`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-T2EFX6WNEZ"
         />
         <Script
           id="google-analytics"
@@ -126,11 +161,17 @@ export default function RootLayout({
           }}
         />
 
-        <Navigation />
-        <main className="flex-grow flex flex-col">
-          {children}
-        </main>
-        <Footer />
+        <SmoothScroll>
+          <Chrome nav={<Navigation />} footer={<Footer />}>
+            {children}
+          </Chrome>
+        </SmoothScroll>
+
+        {/* Cinematic film grain over everything (below nav) */}
+        <div
+          aria-hidden
+          className="grain pointer-events-none fixed inset-0 z-40 opacity-[0.05] mix-blend-overlay"
+        />
       </body>
     </html>
   );
