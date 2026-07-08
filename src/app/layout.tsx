@@ -5,6 +5,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import Chrome from "@/components/layout/Chrome";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -161,9 +162,9 @@ export default function RootLayout({
         />
 
         <SmoothScroll>
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
+          <Chrome nav={<Navigation />} footer={<Footer />}>
+            {children}
+          </Chrome>
         </SmoothScroll>
 
         {/* Cinematic film grain over everything (below nav) */}

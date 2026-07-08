@@ -20,6 +20,9 @@ Install: `npm ci --legacy-peer-deps` (required — Three.js ecosystem has peer d
 ### Route Structure
 - `/` → `src/app/page.tsx` — composes all section components (numbered "chapters" 01–07)
 - `/design-system` → breakdown of the visual language, motion system, 3D scene, and asset pipeline
+- `/network` → unlisted event credential card (QR toggle: LinkedIn / scannable vCard,
+  plus `/gmarte.vcf` download). Not linked from the site; shown in person at events.
+  Renders bare — `layout/Chrome.tsx` strips nav/footer on this route.
 
 ### Component Layers
 

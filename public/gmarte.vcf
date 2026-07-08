@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Marte;Giancarlo;;;
+FN:Giancarlo Marte
+TITLE:Technology & Innovation Manager
+ORG:Caribetrans
+EMAIL;TYPE=INTERNET:giancarlo@gmarte.com
+URL:https://gmarte.com
+item1.URL:https://www.linkedin.com/in/gmarte/
+item1.X-ABLabel:LinkedIn
+END:VCARD
