@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Email Signature — Giancarlo Marte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #060607; --ink-raised: #0b0b0d; --line: rgba(255,255,255,.08);
+    --porcelain: #f4f3f0; --steel: #a6a9b0; --mist: #6b6e76;
+    --signal: #c22233; --signal-soft: #e4636b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--ink); color: var(--porcelain);
+    font-family: 'Archivo', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased; padding: 48px 20px 96px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--mist);
+  }
+  .kicker .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 999px;
+    background: var(--signal); margin-right: 10px; vertical-align: 1px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', Georgia, serif; font-weight: 400;
+    font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.05; margin-top: 22px;
+  }
+  h1 em { color: var(--steel); }
+  .lede { color: var(--steel); font-size: 15px; line-height: 1.7; max-width: 56ch; margin-top: 18px; }
+  .steps { margin-top: 14px; color: var(--mist); font-size: 13.5px; line-height: 1.8; max-width: 62ch; }
+  .steps b { color: var(--porcelain); font-weight: 500; }
+  .chapter { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 28px; }
+  .chapter-head {
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: .22em; text-transform: uppercase;
+  }
+  .chapter-head .idx { color: var(--signal-soft); }
+  .chapter-head .label { color: var(--mist); }
+  .chapter-head .rule { flex: 1; height: 1px; background: var(--line); }
+  .note { color: var(--mist); font-size: 13px; line-height: 1.7; margin-top: 12px; max-width: 60ch; }
+  .canvas {
+    margin-top: 20px; background: #ffffff; border: 1px solid var(--line);
+    padding: 34px 30px; overflow-x: auto;
+  }
+  .canvas-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: .2em; text-transform: uppercase; color: #9a988f;
+    padding-bottom: 18px;
+  }
+  .actions { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  button.copy {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: .18em; text-transform: uppercase; cursor: pointer;
+    background: var(--porcelain); color: var(--ink); border: 0; padding: 14px 26px;
+    transition: background .4s, color .4s;
+  }
+  button.copy:hover { background: var(--signal); color: var(--porcelain); }
+  button.copy.done { background: var(--signal); color: var(--porcelain); }
+  .hint { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mist); align-self: center; }
+  footer { border-top: 1px solid var(--line); margin-top: 72px; padding-top: 22px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  footer span, footer a {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--mist); text-decoration: none;
+  }
+  footer a:hover { color: var(--porcelain); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="kicker"><span class="dot"></span>gmarte.com — email signature</p>
+  <h1>The signature, <em>in the same signal.</em></h1>
+  <p class="lede">
+    Two email-safe translations of the site&rsquo;s design language. Email clients
+    strip web fonts and stylesheets, so these use Georgia in place of Instrument
+    Serif, Courier in place of IBM Plex Mono &mdash; tables and inline styles only.
+  </p>
+  <p class="steps">
+    <b>Install in Gmail:</b> press <b>Copy signature</b> below &rarr; Gmail &rarr; Settings
+    (gear) &rarr; <b>See all settings</b> &rarr; General &rarr; Signature &rarr; <b>Create new</b> &rarr;
+    paste (Ctrl/Cmd+V) &rarr; set it for new emails and replies &rarr; <b>Save changes</b> at the bottom.
+  </p>
+
+  <!-- ============ 01 · DARK CREDENTIAL CHIP ============ -->
+  <section class="chapter">
+    <div class="chapter-head">
+      <span class="idx">S·01</span><span class="label">Credential chip — dark, with photo</span><span class="rule"></span>
+    </div>
+    <p class="note">
+      The full brand statement: obsidian chip, serif name, mono roles, one red
+      signal. The photo loads from gmarte.com, so it appears once the site is
+      deployed. Best for external, first-contact email.
+    </p>
+    <div class="canvas">
+      <div class="canvas-label">Preview — as recipients see it on a light client</div>
+      <div id="sig-dark">
+        <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+          <tr>
+            <td bgcolor="#060607" style="background-color:#060607;padding:20px 24px;">
+              <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+                <tr>
+                  <td valign="middle" style="padding-right:20px;">
+                    <img src="https://gmarte.com/profile.jpg" width="64" height="64" alt="Giancarlo Marte"
+                      style="display:block;width:64px;height:64px;border:1px solid #2a2a2e;">
+                  </td>
+                  <td valign="middle" style="border-left:1px solid #2a2a2e;padding-left:20px;">
+                    <div style="font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.25;color:#f4f3f0;">
+                      Giancarlo Marte<span style="color:#e4636b;">.</span>
+                    </div>
+                    <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:1.7;letter-spacing:2px;text-transform:uppercase;color:#a6a9b0;padding-top:6px;">
+                      Technology &amp; Innovation Manager
+                    </div>
+                    <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:1.7;letter-spacing:2px;text-transform:uppercase;color:#6b6e76;">
+                      SAP Solutions Architect
+                    </div>
+                    <div style="padding-top:12px;">
+                      <a href="https://gmarte.com" style="font-family:'Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e4636b;text-decoration:none;">gmarte.com</a>
+                      <span style="font-family:'Courier New',Courier,monospace;font-size:10px;color:#3a3a3e;">&nbsp;&middot;&nbsp;</span>
+                      <a href="https://www.linkedin.com/in/gmarte/" style="font-family:'Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#a6a9b0;text-decoration:none;">LinkedIn</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="copy" data-target="sig-dark">Copy signature</button>
+      <span class="hint">Paste into Gmail &rarr; Settings &rarr; Signature</span>
+    </div>
+  </section>
+
+  <!-- ============ 02 · LIGHT LEDGER LINE ============ -->
+  <section class="chapter">
+    <div class="chapter-head">
+      <span class="idx">S·02</span><span class="label">Ledger line — light, text only</span><span class="rule"></span>
+    </div>
+    <p class="note">
+      The bulletproof version: no images to block, no dark block in long threads.
+      One red rule carries the brand. Best for replies, internal mail, and
+      clients that block remote images.
+    </p>
+    <div class="canvas">
+      <div class="canvas-label">Preview — as recipients see it on a light client</div>
+      <div id="sig-light">
+        <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+          <tr>
+            <td style="border-left:2px solid #c22233;padding:4px 0 4px 18px;">
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.25;color:#141416;">
+                Giancarlo Marte<span style="color:#c22233;">.</span>
+              </div>
+              <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:1.7;letter-spacing:2px;text-transform:uppercase;color:#6b6e76;padding-top:5px;">
+                Technology &amp; Innovation Manager
+              </div>
+              <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:1.7;letter-spacing:2px;text-transform:uppercase;color:#9a9da4;">
+                SAP Solutions Architect
+              </div>
+              <div style="padding-top:10px;">
+                <a href="https://gmarte.com" style="font-family:'Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#c22233;text-decoration:none;">gmarte.com</a>
+                <span style="font-family:'Courier New',Courier,monospace;font-size:10px;color:#c9c7c0;">&nbsp;&middot;&nbsp;</span>
+                <a href="https://www.linkedin.com/in/gmarte/" style="font-family:'Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6b6e76;text-decoration:none;">LinkedIn</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="copy" data-target="sig-light">Copy signature</button>
+      <span class="hint">Paste into Gmail &rarr; Settings &rarr; Signature</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>gmarte.com/signature.html — unlisted</span>
+    <a href="/design-system">Design system &rarr;</a>
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll('button.copy').forEach(function (btn) {
+    btn.addEventListener('click', async function () {
+      var node = document.getElementById(btn.dataset.target);
+      var html = node.innerHTML;
+      var ok = false;
+      try {
+        if (navigator.clipboard && window.ClipboardItem) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              'text/html': new Blob([html], { type: 'text/html' }),
+              'text/plain': new Blob([node.innerText], { type: 'text/plain' })
+            })
+          ]);
+          ok = true;
+        }
+      } catch (e) { ok = false; }
+      if (!ok) {
+        // Fallback: select the rendered signature so Ctrl/Cmd+C copies rich content
+        var range = document.createRange();
+        range.selectNodeContents(node);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        sel.removeAllRanges();
+      }
+      var prev = btn.textContent;
+      btn.textContent = ok ? 'Copied — paste into Gmail' : 'Select + Ctrl/Cmd+C';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = prev; btn.classList.remove('done'); }, 2600);
+    });
+  });
+</script>
+</body>
+</html>
